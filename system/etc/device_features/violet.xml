@@ -339,7 +339,7 @@
     <bool name="support_hall_sensor">false</bool>
     <!--whether sensor_has_latency-->
     <bool name="sensor_has_latency">true</bool>
-   <!-- whether support dynamic light spot in portrait module  -->
+    <!-- whether support dynamic light spot in portrait module  -->
     <bool name="support_camera_dynamic_light_spot">true</bool>
     <bool name="support_front_beauty_mfnr">true</bool>
     <!--These region support face unlock-->
