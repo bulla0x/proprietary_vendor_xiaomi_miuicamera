@@ -25,7 +25,8 @@ PRODUCT_COPY_FILES += \
         $(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/lib64,system/lib64)
 
 PRODUCT_PACKAGES += \
-    ANXCamera
+    ANXCamera \
+    ANXCameraOverlay
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
