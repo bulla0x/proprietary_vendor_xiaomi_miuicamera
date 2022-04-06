@@ -14,6 +14,8 @@
 
 VENDOR_PATH := vendor/ANXCamera
 
+RELAX_USES_LIBRARY_CHECK := true
+
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/etc,system/etc) \
 	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/ANXCamera/lib/arm,system/priv-app/ANXCamera/lib/arm) \
