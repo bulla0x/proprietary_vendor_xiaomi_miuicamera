@@ -36,7 +36,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.privapp.list=com.android.camera \
     persist.vendor.camera.picturesize.limit.enable=false \
     ro.miui.notch=1 \
-    ro.product.device=violet \
     ro.miui.ui.version.code=13 \
     ro.miui.ui.version.name=V130 \
     ro.miui.region=CN \
