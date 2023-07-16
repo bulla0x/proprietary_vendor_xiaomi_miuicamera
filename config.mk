@@ -42,8 +42,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.miui.build.region=cn \
     ro.fota.oem=Xiaomi \
     ro.boot.camera.config=_pro \
-    ro.com.google.lens.oem_camera_package=com.android.camera \
-    ro.control_privapp_permissions=log
+    ro.com.google.lens.oem_camera_package=com.android.camera
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
