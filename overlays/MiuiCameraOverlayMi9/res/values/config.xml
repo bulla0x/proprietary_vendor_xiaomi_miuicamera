@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- hide Universal settings button -->
+	<bool name="hide_universal_settings">false</bool>
+
+	<!-- this fix disables Studio lighting feature from Portrait mode, usually fixes crashing on AOSP ROMs -->
+	<bool name="pref_portraitfix_default">true</bool>
+
+	<!-- enable to use Parallel processing and it's features in Photo modes with Rear cameras,
+		 main features are Leica/Film filters, AI Watermark, Supermoon, Leica/Redmi watermarks
+		 Parallel processing is usually broken on AOSP and MIUI/HyperOS ports, 
+		 on AOSP it may be fixed by including some libs, also heavily depends on Device Tree and ROM sources -->
+	<bool name="pref_camera_parallel_process_enable_default">false</bool>
+
+	<!-- enable to use Parallel processing when Front camera is used -->
+	<bool name="pref_parallelfront_default">false</bool>
+
+ 	<!-- enable to use Parallel processing when UltraHD (xxMP) is used -->
+	<bool name="pref_ultra_parallel_default">false</bool>
+
+	<!-- disable multi-lens zoom in video when EIS is enabled -->
+	<bool name="pref_limit_video_sat_default">true</bool>
+
+	<!-- hide some experimental functions from users -->
+	<bool name="hide_expert_mode">false</bool>
+
+	<!-- enable EIS when Front video is used -->
+	<bool name="pref_front_eis_default">true</bool>
+
+	<!-- enable Super Resolution, used when taking photos with 1.1x and higher zoom, smoothens and sharpens the output image
+		 if it doesn't work, may need "pref_srreprocess_default" to be enabled from Universal settings -->
+	<bool name="pref_camera_sr_enable_default">true</bool>
+	
+	<bool name="pref_camera_smart_tip_default">true</bool>
+	
+	<bool name="pref_scan_qrcode_default">true</bool>
+
+	<!-- another fix for Portrait mode, may break the blur effect -->
+	<bool name="pref_experimental_portrait_default">true</bool>
+
+	<!-- may fix black viewfinder in photo modes, disables Tele lens usage -->
+	<bool name="pref_telefix_default">true</bool>
+
+	<!-- slow motion fps: 0 = none, 1 = 120fps, 2 = 240fps, 3 = 480fps, 4 = 960fps -->
+	<string name="pref_slowmo_default">4</string>
+</resources>
