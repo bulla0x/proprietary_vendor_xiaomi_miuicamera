@@ -15,7 +15,7 @@ PRODUCT_PACKAGES += \
     MiuiScanner
 
 
-ifeq ($(filter davinci raphael cepheus,$(TARGET_DEVICE)),)
+ifneq ($(filter davinci raphael cepheus,$(TARGET_DEVICE)),)
 
 # Overlay
 PRODUCT_PACKAGES += \
@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
 
 endif
 
-ifeq ($(filter davinci,$(TARGET_DEVICE)),)
+ifneq ($(filter davinci,$(TARGET_DEVICE)),)
 
 # Davinci(in) blobs
 PRODUCT_COPY_FILES += \
@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 
 endif
 
-ifeq ($(filter raphael,$(TARGET_DEVICE)),)
+ifneq ($(filter raphael,$(TARGET_DEVICE)),)
 
 # Raphael(in) blobs
 PRODUCT_COPY_FILES += \
@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 
-ifeq ($(filter cepheus,$(TARGET_DEVICE)),)
+ifneq ($(filter cepheus,$(TARGET_DEVICE)),)
 
 # Cepheus blobs
 PRODUCT_COPY_FILES += \
@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 
 endif
 
-ifeq ($(filter toco,$(TARGET_DEVICE)),)
+ifneq ($(filter toco,$(TARGET_DEVICE)),)
 
 # Toco blobs
 PRODUCT_COPY_FILES += \
@@ -74,6 +74,7 @@ PRODUCT_COPY_FILES += \
 	vendor/xiaomi/miuicamera/config/toco/system/lib64/libcamera_mianode_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
 
 endif
+
 
 
 # Props
