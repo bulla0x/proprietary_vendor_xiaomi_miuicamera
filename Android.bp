@@ -1163,6 +1163,10 @@ android_app_import {
         "MiuiCamera_lib_libDocumentProcess",
         "MiuiCamera_lib_libmialgo_saliency_jni",
         "MiuiCamera_lib_libYuvWatermark",
+        "MiuiCamera_lib_libmorpho_memory_allocator",
+        "MiuiCamera_lib_libmorpho_panorama_compat",
+        "MiuiCamera_lib_libmorpho_panorama_gp3",
+        "MiuiCamera_lib_libmorpho_sensor_fusion",
         "miuicamera_system_libSNPE",
     ],
 }
@@ -1205,42 +1209,4 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     check_elf_files: false,
-}
-
-cc_prebuilt_library_shared {
-    name: "miuicamera_vendor_libswregistrationalgo",
-    stem: "libswregistrationalgo",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/leica/libswregistrationalgo.so",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "miuicamera_vendor_libmialgoengine",
-    stem: "libmialgoengine",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmialgoengine.so",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
-    soc_specific: true,
 }
