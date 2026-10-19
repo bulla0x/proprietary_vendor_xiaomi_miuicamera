@@ -15,6 +15,12 @@
         <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true" />
         <permission name="android.permission.ACCESS_MEDIA_LOCATION" fixed="true" />
         <permission name="android.permission.WRITE_MEDIA_STORAGE" fixed="true" />
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE" fixed="true" />
+        <!-- Media & Notification permissions for Android 13/14/15/16/17 -->
+        <permission name="android.permission.READ_MEDIA_IMAGES" fixed="true" />
+        <permission name="android.permission.READ_MEDIA_VIDEO" fixed="true" />
+        <permission name="android.permission.READ_MEDIA_AUDIO" fixed="true" />
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="true" />
         <!-- Omni -->
         <permission name="android.permission.INTERACT_ACROSS_USERS" fixed="true" />
         <permission name="android.permission.WRITE_SECURE_SETTINGS" fixed="true" />

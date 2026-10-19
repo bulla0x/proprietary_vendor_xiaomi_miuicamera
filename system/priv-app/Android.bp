@@ -5,11 +5,13 @@ android_app_import {
     dex_preopt: {
         enabled: false,
     },
+    enforce_uses_libs: false,
     overrides: [
         "SnapdragonCamera",
         "Snap",
         "Camera2",
         "Aperture",
+        "GCamGOPrebuilt",
     ],
     apk: "MiuiCamera/MiuiCamera.apk",
 }
@@ -21,5 +23,6 @@ android_app_import {
     dex_preopt: {
         enabled: false,
     },
+    enforce_uses_libs: false,
     apk: "MiuiExtraPhoto/MiuiExtraPhoto.apk",
 }

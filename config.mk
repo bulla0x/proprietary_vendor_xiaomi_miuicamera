@@ -12,15 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-VENDOR_PATH := vendor/MiuiCamera
+MIUICAMERA_DIR := $(patsubst %/,%,$(dir $(lastword $(MAKEFILE_LIST))))
+ifeq ($(strip $(MIUICAMERA_DIR)),)
+    MIUICAMERA_DIR := vendor/xiaomi/miuicamera
+endif
 
 RELAX_USES_LIBRARY_CHECK := true
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/etc,system/etc) \
-    $(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/MiuiCamera/lib/arm64,system/priv-app/MiuiCamera/lib/arm64) \
-    $(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/MiuiExtraPhoto/lib/arm64,system/priv-app/MiuiExtraPhoto/lib/arm64) \
-    $(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/lib64,system/lib64)
+    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/etc,system/etc) \
+    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/priv-app/MiuiCamera/lib/arm64,system/priv-app/MiuiCamera/lib/arm64) \
+    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/priv-app/MiuiExtraPhoto/lib/arm64,system/priv-app/MiuiExtraPhoto/lib/arm64) \
+    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/lib64,system/lib64) \
+    $(MIUICAMERA_DIR)/system/etc/device_features/lavender.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/lavender.xml
 
 PRODUCT_PACKAGES += \
     MiuiCamera \
@@ -41,9 +45,24 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.miui.region=CN \
     ro.miui.build.region=cn \
     ro.fota.oem=Xiaomi \
-    ro.boot.camera.config=_pro \
-    ro.com.google.lens.oem_camera_package=com.android.camera
+    ro.com.google.lens.oem_camera_package=com.android.camera \
+    vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam
+
+# Device-specific Camera Config Property
+# On lavender (Redmi Note 7 / Note 7S), ro.boot.camera.config=1 directs MiuiCamera
+# to load com.mi.device.Lavender class cleanly without appending the invalid _pro suffix.
+# On violet (Redmi Note 7 Pro), ro.boot.camera.config=_pro is preserved.
+ifneq ($(filter lavender lavender_in,$(TARGET_DEVICE)),)
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.boot.camera.config=1
+else ifeq ($(TARGET_DEVICE),violet)
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.boot.camera.config=_pro
+else
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.boot.camera.config=1
+endif
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/MiuiCamera
+    $(MIUICAMERA_DIR)
