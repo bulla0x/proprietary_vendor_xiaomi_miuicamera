@@ -21,15 +21,13 @@ RELAX_USES_LIBRARY_CHECK := true
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/etc,system/etc) \
-    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/priv-app/MiuiCamera/lib/arm64,system/priv-app/MiuiCamera/lib/arm64) \
-    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/priv-app/MiuiExtraPhoto/lib/arm64,system/priv-app/MiuiExtraPhoto/lib/arm64) \
-    $(call find-copy-subdir-files,*,$(MIUICAMERA_DIR)/system/lib64,system/lib64) \
     $(MIUICAMERA_DIR)/system/etc/device_features/lavender.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/lavender.xml
 
 PRODUCT_PACKAGES += \
     MiuiCamera \
     MiuiCameraOverlay \
-    MiuiExtraPhoto
+    MiuiExtraPhoto \
+    libSNPE_system
 
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.enableAdvanceFeatures=0x3E7 \
