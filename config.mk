@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
     libSNPE_system
 
 PRODUCT_SYSTEM_PROPERTIES += \
+    persist.camera.eis.enable=1 \
+    persist.vendor.camera.eis.enable=1 \
+    persist.vendor.camera.video.eis=1 \
+    persist.vendor.camera.qcfa=1 \
     persist.vendor.camera.enableAdvanceFeatures=0x3E7 \
     persist.vendor.camera.multicam=TRUE \
     persist.vendor.camera.multicam.fpsmatch=TRUE \
