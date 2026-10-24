@@ -39,7 +39,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.multicam.fpsmatch=TRUE \
     persist.vendor.camera.multicam.framesync=1 \
     persist.vendor.camera.multicam.hwsync=TRUE \
-    persist.vendor.camera.privapp.list=com.android.camera \
     persist.vendor.camera.picturesize.limit.enable=false \
     ro.miui.notch=1 \
     ro.miui.ui.version.code=13 \
@@ -47,8 +46,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.miui.region=CN \
     ro.miui.build.region=cn \
     ro.fota.oem=Xiaomi \
-    ro.com.google.lens.oem_camera_package=com.android.camera \
-    vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam
+    ro.com.google.lens.oem_camera_package=com.android.camera
 
 # Device-specific Camera Config Property
 # On lavender (Redmi Note 7 / Note 7S), ro.boot.camera.config=1 directs MiuiCamera
