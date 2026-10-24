@@ -232,6 +232,8 @@
     <string-array name="camera_adjust_picture_size_cmd_list">
         <!-- camera id 0 add 12M HAL_PIXEL_FORMAT_RAW16 input -->
         <item>com.android.camera:0, add, 4000, 3000, 32, true</item>
+        <item>com.android.camera:0, add, 8000, 6000, 256, true</item>
+        <item>com.android.camera:0, ssize, 8000, 6000</item>
         <!-- camera id 0 set sensor size 48M, camera id 1 set sensor size 16M -->
         <item>com.antutu:0, ssize, 8000, 6000;1, ssize, 4608, 3456</item>
         <!-- camera id 1 limit picture-size <= 1920x1080 -->
@@ -288,6 +290,9 @@
     <bool name="support_sign_verify_in_cust">true</bool>
     <!-- Support Super Resolution (48MP Ultra Pixel) -->
     <bool name="support_super_resolution">true</bool>
+    <bool name="support_camera_pixel_48000000">true</bool>
+    <bool name="support_camera_pixel_48m">true</bool>
+    <bool name="support_camera_qcfa_picture_size">true</bool>
     <!-- whether support dynamic light spot in portrait module -->
     <bool name="support_camera_dynamic_light_spot">true</bool>
     <bool name="support_front_beauty_mfnr">true</bool>
